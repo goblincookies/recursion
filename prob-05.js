@@ -25,4 +25,4 @@ let d = [ 0,5,5 ];
 console.log( productOfArray( a ) );
 console.log( productOfArray( b ) );
 console.log( productOfArray( c ) );
-console.log( productOfArray( d ) );
+console.log( productOfArray( b ) );
