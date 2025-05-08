@@ -1,9 +1,9 @@
 const msgFib = 'How many digits of the Fibonacci squence?';
 const msgFibError = 'sorry, that isnt a valid number. How many digits of the Fibonacci squence?';
-let error = false;
+let errorFib = false;
 
-const searchHTML = document.getElementById( 'fib-search' );
-const answerHTML = document.getElementById( 'fib-answer' );
+const searchFibHTML = document.getElementById( 'fib-search' );
+const answerFibHTML = document.getElementById( 'fib-answer' );
 
 document.getElementById( 'fib-start' ).addEventListener( 'click', getFib );
 
@@ -20,11 +20,11 @@ function fibRec( lvl, a, b ) {
 
 function getFib( ) {
     let msg = msgFib;
-    if( error ) {msg = msgFibError;}
+    if( errorFib ) {msg = msgFibError;}
     let input = prompt( msg );
 
     if ( !input ) {
-        error = false;
+        errorFib = false;
         return;
     };
 
@@ -33,11 +33,11 @@ function getFib( ) {
         // CLAMP TO POSITIVE
         input = Math.max( 0, input );
         error = false;
-        searchHTML.textContent = input;
+        searchFibHTML.textContent = input;
 
-        answerHTML.textContent = fibRec( input, 0, 1 );
+        answerFibHTML.textContent = fibRec( input, 0, 1 );
         return;
     };
-    error = true;
-    getFib( 'sorry, that isnt a valid number. How many digits of the Fibonacci squence?' );
+    errorFib = true;
+    getFib();
 };
